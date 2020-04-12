@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   Repos.html
+   
+   Copyright 2020 pisipony <pisipony@luna-pc>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css">
+<style type="text/css">
+	
+</style>
+<title>Доступные репозитории пакетов.</title>
+<meta name="generator" content="Geany 1.36" />
+</head>
+
+<body>
+<p>
+<h4>В настоящее время для Pisi Linux доступно четыре репозитория с бинарными пакетами:</h4>
+<ol>
+	<li><a href="https://ciftlik.pisilinux.org/2.0/">https://ciftlik.pisilinux.org/2.0/</a> -- основной репозиторий.</li>
+	<li><a href="http://xfce.pisilinux.org/">http://xfce.pisilinux.org/</a> -- репозиторий с компонентами рабочего стола xfce.</li>
+	<li><a href="http://mate.pisilinux.org/">http://mate.pisilinux.org/</a> -- репозиторий с компонентами рабочего стола mate.</li>
+	<li><a href="http://contrib.pisilinux.org/">*http://contrib.pisilinux.org/</a> -- некоторые дополнительные пакеты, например, переупакованные из deb или rpm( браузер opera, текстовый редактор sublime-text и другие. ).</li>
+</ol>
+<h4>Кроме того, существуют еще два github-репозитория, содержащие спеки для сборки пакетов из исходных кодов:</h4>
+<ol>
+	<li><a href="https://github.com/pisilinux/contrib">*https://github.com/pisilinux/contrib</a> -- переходный репозиторий. Многие пакеты, перед тем, как быть принятыми в upstream дистрибутива, появляются здесь. На текущий момент значительное( до 30% ) количество спеков в нем устарело и не работает, либо предназначены для сборки пакетов, уже присутствующих в бинарных репозиториях. Тем не менее работа по исправлению ошибок и обновлению репозитория contrib активно ведется и он заслуживает внимания.</li>
+	<li><a href="https://github.com/pisilinux/pisilife-2">https://github.com/pisilinux/pisilife-2</a> -- специфичный софт. Многие пакеты скомпилированы и лежат в *contrib.pisilinux.org.</li>
+</ol>
+<h4>Для добавления репозитория в систему необходимо указать имя репозитория( произвольно ) и адрес файла pisi-index.xml.xz.</h4>
+<p>**В терминале: <code>
+sudo pisi add-repo имя http://xfce.pisilinux.org/pisi-index.xml.xz
+</code></p>
+</p>
+
+<hr>
+
+<p><span style="font-weight: bold;">*</span>Репозитории <a href="http://contrib.pisilinux.org/">http://contrib.pisilinux.org/</a> и <a href="https://github.com/pisilinux/contrib">https://github.com/pisilinux/contrib</a> не имеют друг к другу отношения.</p>
+<p><span style="font-weight: bold;">**</span>Команды для управления пакетами смотрите в терминале с помощью <code>pisi help</code> или <code>pisi ?</code></p>
+</body>
+
+</html>
