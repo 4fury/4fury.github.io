@@ -4,7 +4,15 @@ body {
 	padding: 25px 100px;
 }
 
-code {
-	padding: 8px 12px;
-	border: solid 1px #000000;
+span {
+	font-weight: bold;
+}
+
+table, tr, td {
+	border: solid 1px grey;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
 }

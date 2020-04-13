@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   packagemanager.html
+   
+   Copyright 2020 pisipony <pisipony@luna-pc>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css">
+<style type="text/css">
+
+</style>
+<title>Управление пакетами в Pisi Linux. Установка, удаление, сборка.</title>
+<meta name="generator" content="Geany 1.36" />
+</head>
+
+<body>
+<h4>Общее</h4>
+<p>Для управления пакетами в Pisi Linux существует пакетный менеджер pisi с текстовым интерфейсом и несколько графических фронтендов к различным его функциям. Ниже приведена слегка отредактированная справка pisi, которую можно посмотреть в терминале с помощью команд</p>
+<span>pisi help</span>
+<p>или</p>
+<span>pisi ?</span>
+<p/>
+<hr>
+<pre>
+Использование: pisi [опции] [команда] [аргументы]
+
+где [команда] это одна из:
+
+</pre>
+<table>
+<tr><td><span>add-repo</span> (<span>ar</span>)</td><td>Добавить репозиторий</td></tr>
+<tr><td><span>blame</span> (<span>bl</span>)</td><td>Информация об авторе пакета, его версии и релизе</td></tr>
+<tr><td><span>build</span> (<span>bi</span>)</td><td>*Собрать пакет PiSi ( локально )</td></tr>
+<tr><td><span>check</span></td><td>Проверка установки пакета</td></tr>
+<tr><td><span>clean</span></td><td>Очистить файлы блокировки</td></tr>
+<tr><td><span>configure-pending</span> (<span>cp</span>)</td><td>Конфигурировать задерженные пакеты</td></tr>
+<tr><td><span>delete-cache</span> (<span>dc</span>)</td><td>Удалить кэш загруженных пакетов</td></tr>
+<tr><td><span>disable-repo</span> (<span>dr</span>)</td><td>Отключить репозиторий</td></tr>
+<tr><td><span>emerge</span> (<span>em</span>)</td><td>*Собрать и установить пакет ( из репозитория )</td></tr>
+<tr><td><span>emergeup</span> (<span>emup</span>)</td><td>*Собрать и обновить пакет ( из репозитория )</td></tr>
+<tr><td><span>enable-repo</span> (<span>er</span>)</td><td>Включить репозиторий</td></tr>
+<tr><td><span>fetch</span> (<span>fc</span>)</td><td>Скачать пакет</td></tr>
+<tr><td><span>graph</span></td><td>График связей между пакетами</td></tr>
+<tr><td><span>help</span> (<span>?</span>) <span>команда</span></td><td>Выводит справку для заданных команд</td></tr>
+<tr><td><span>history</span> (<span>hs</span>)</td><td>История операций pisi</td></tr>
+<tr><td><span>index</span> (<span>ix</span>)</td><td>Индексировать файлы PiSi в заданной директории</td></tr>
+<tr><td><span>info</span></td><td>Просмотр информации о пакете ( имя, описание, доступность, список файлов, зависимости )</td></tr>
+<tr><td><span>install</span> (<span>it</span>)</td><td>Установить пакеты PiSi</td></tr>
+<tr><td><span>list-available</span> (<span>la</span>)</td><td>Показать доступные пакеты в репозиториях</td></tr>
+<tr><td><span>list-components</span> (<span>lc</span>)</td><td>Показать доступные компоненты</td></tr>
+<tr><td><span>list-installed</span> (<span>li</span>)</td><td>Список всех установленных пакетов</td></tr>
+<tr><td><span>list-newest</span> (<span>ln</span>)</td><td>Список новых пакетов в репозиториях</td></tr>
+<tr><td><span>list-orphaned</span> (<span>lo</span>)</td><td>Показать список пакетов, не требуемых согласно зависимостям</td></tr>
+<tr><td><span>list-pending</span> (<span>lp</span>)</td><td>Показать ожидающие пакеты</td></tr>
+<tr><td><span>list-repo</span> (<span>lr</span>)</td><td>Список репозиториев</td></tr>
+<tr><td><span>list-sources</span> (<span>ls</span>)</td><td>*Показать список пакетов, доступных для сборки</td></tr>
+<tr><td><span>list-upgrades</span> (<span>lu</span>)</td><td>Показать список пакетов для обновления</td></tr>
+<tr><td><span>rebuild-db</span> (<span>rdb</span>)</td><td>Пересобрать базу данных</td></tr>
+<tr><td><span>remove</span> (<span>rm</span>)</td><td>Удалить PiSi пакеты</td></tr>
+<tr><td><span>remove-orphaned</span> (<span>ro</span>)</td><td>Удалить пакеты, не требуемые согласно зависимостям</td></tr>
+<tr><td><span>remove-repo</span> (<span>rr</span>)</td><td>Удалить репозиторий</td></tr>
+<tr><td><span>search</span> (<span>sr</span>)</td><td>Искать пакеты в бинарном репозитории</td></tr>
+<tr><td><span>search-file</span> (<span>sf</span>)</td><td>Искать файл. Позволяет определить принадлежность файла установленному пакету</td></tr>
+<tr><td><span>update-repo</span> (<span>ur</span>)</td><td>Обновить репозитории</td></tr>
+<tr><td><span>upgrade</span> (<span>up</span>)</td><td>Обновить пакеты PiSi</td></tr>
+</table>
+<pre>
+
+Используйте "pisi help [команда]" чтобы посмотреть справку по отдельным командам.
+
+Опции:
+
+</pre>
+<table>
+<tr>
+<tr><td><span>--version</span></td><td>показать версию pisi и выйти</td></tr>
+<tr><td><span>-h</span> [<span>--help</span>]</td><td>показать справку и выйти</td></tr>
+</table>
+<pre>
+
+Общие опции:
+
+</pre>
+<table>
+<tr>
+<tr><td><span>-D</span> [<span>--destdir</span>] arg</td><td>Изменение корневой системы для команд PiSi</td></tr>
+<tr><td><span>-y</span> [<span>--yes-all</span>]</td><td>Отвечать ДА на все запросы ДА/НЕТ</td></tr>
+<tr><td><span>-L</span> [<span>--bandwidth-limit</span>] arg</td><td>граничить пропускную способность в КБ</td></tr>
+<tr><td><span>-v</span> [<span>--verbose</span>]</td><td>Подробный вывод</td></tr>
+<tr><td><span>-d</span> [<span>--debug</span>]</td><td>Показать информацию об отладке</td></tr>
+</table>
+
+<h4>Графические приложения</h4>
+<p>
+<span>Package-manager</span> -- предназначен для работы с бинарными репозиториями. Позволяет устанавливать и удалять пакеты, добавлять и удалять репозитории, изменять их приоритет, управлять кэшем загруженных пакетов.
+</p>
+<p>
+<span>PiSiYap</span> -- простое приложение, путем подстановки значений позволяющее сформировать файлы для сборки пакета из исходных кодов. Не предназначен для сложных инструкций сборки.
+</p>
+<p>
+<span>PiSiDo</span> -- скачивает и запускает образ docker для сборки пакетов pisi из исходных кодов. При подстановке значений пользователем формирует файл pspec.xml. Содержит встроенный текстовый редактор и шаблоны инструкций сборки( actions.py ). Будьте внимательны, если уже запускаете docker иначе.
+</p>
+<hr>
+<span>*</span> -- фактически команде сборки передается имя проекта, но не пакета. Из каждого проекта в зависимости от содержимого файла pspec.xml может быть сформировано несколько пакетов, в том числе пакеты с заголовками ( *-devel ) и документацией.
+</body>
+
+</html>
