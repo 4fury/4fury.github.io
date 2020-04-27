@@ -25,15 +25,13 @@
 
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="style.css">
-<style type="text/css">
-
-</style>
 <title>Управление пакетами в Pisi Linux. Установка, удаление, сборка.</title>
+<link rel="stylesheet" href="style.css">
 <meta name="generator" content="Geany 1.36" />
 </head>
 
 <body>
+<a href="index.html"><i>Начало</i></a>
 <h4>Общее</h4>
 <p>Для управления пакетами в Pisi Linux существует пакетный менеджер pisi с текстовым интерфейсом и несколько графических фронтендов к различным его функциям. Ниже приведена слегка отредактированная справка pisi, которую можно посмотреть в терминале с помощью команд</p>
 <span>pisi help</span>
@@ -67,7 +65,7 @@
 <tr><td><span>info</span></td><td>Просмотр информации о пакете ( имя, описание, доступность, список файлов, зависимости )</td></tr>
 <tr><td><span>install</span> (<span>it</span>)</td><td>Установить пакеты PiSi</td></tr>
 <tr><td><span>list-available</span> (<span>la</span>)</td><td>Показать доступные пакеты в репозиториях</td></tr>
-<tr><td><span>list-components</span> (<span>lc</span>)</td><td>Показать доступные компоненты</td></tr>
+<tr><td><span>list-components</span> (<span>lc</span>)</td><td>Показать доступные компоненты ( группы пакетов )</td></tr>
 <tr><td><span>list-installed</span> (<span>li</span>)</td><td>Список всех установленных пакетов</td></tr>
 <tr><td><span>list-newest</span> (<span>ln</span>)</td><td>Список новых пакетов в репозиториях</td></tr>
 <tr><td><span>list-orphaned</span> (<span>lo</span>)</td><td>Показать список пакетов, не требуемых согласно зависимостям</td></tr>
@@ -121,7 +119,6 @@
 <span>PiSiDo</span> -- скачивает и запускает образ docker для сборки пакетов pisi из исходных кодов. При подстановке значений пользователем формирует файл pspec.xml. Содержит встроенный текстовый редактор и шаблоны инструкций сборки( actions.py ). Будьте внимательны, если уже запускаете docker иначе.
 </p>
 <hr>
-<span>*</span> -- фактически команде сборки передается имя проекта, но не пакета. Из каждого проекта в зависимости от содержимого файла pspec.xml может быть сформировано несколько пакетов, в том числе пакеты с заголовками ( *-devel ) и документацией.
 </body>
 
 </html>
